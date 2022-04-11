@@ -36,15 +36,13 @@ Users should be able to:
 
 ### Screenshot
 
-(./dark-theme-todo-app.png)
+![](./dark-theme-todo-app.png)
 
-(./light-theme-todo-app.png)
-
-![](./screenshot.jpg)
+![](./light-theme-todo-app.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Add solution URL here](https://github.com/Jasoniyi/frontend-mentor-todoapp)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
 ## My process
