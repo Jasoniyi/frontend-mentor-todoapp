@@ -1,38 +1,295 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input:focus {
+  outline: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+:root {
+  /* Light Theme */
+
+--Very-Light-Gray: hsl(0, 0%, 98%);
+--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+--Light-Grayish-Blue: hsl(233, 11%, 84%);
+--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+  /* Dark Theme */
+
+--Very-Dark-Blue: hsl(235, 21%, 11%);
+--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+--Light-Grayish-Blue: hsl(234, 39%, 85%);
+--Light-Grayish-Blue-hover: hsl(236, 33%, 92%);
+--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+--Very-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
 }
 
-.App-header {
-  background-color: #282c34;
+body {
+  font-weight: 400;
+  font-family: "Josefin Sans", sans-serif, "Courier New", Courier, monospace;
+  width: 100vw;
+  overflow-x: hidden;
   min-height: 100vh;
+}
+
+.todo-body {
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+
+.dark-theme {
+  background-color: var(--Very-Dark-Blue); 
+  background-image: url(./images/bg-desktop-dark.jpg);
+  min-height: 100vh;
+  color: var(--Very-Light-Gray)
+}
+
+.light-theme {
+  background-color: var(--Very-Light-Grayish-Blue);
+  background-image: url(./images/bg-desktop-light.jpg);
+  min-height: 100vh;
+}
+
+.todo-wrapper {
   display: flex;
+  justify-content: center;
+  padding-top: 2em;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.todo-content {
+  width: 40%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.todo-content h1 {
+  letter-spacing: 0.5em;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.todo-content span {
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    /* ADD-FORM */
+.form-wrapper {
+  margin: 4.5em 0 3em 0;
+
 }
+
+.form-wrapper, .list-content-wrapper, .filter-wrapper, .mobile-filter-wrapper {
+  background-color: white;
+  height: 3.5em;
+  width: 40%;
+  border-radius: 10px;
+  display: flex;
+  padding: 1.3em;
+  gap: 0.5em;
+  align-items: center;
+
+}
+
+
+
+.todo-body.dark-theme .form-wrapper {
+  background-color: var(--Very-Dark-Desaturated-Blue)
+}
+
+.todo-body.dark-theme .list-content-wrapper {
+  background-color: var(--Very-Dark-Desaturated-Blue)
+}
+
+.todo-body.dark-theme .filter-wrapper{
+  background-color: var(--Very-Dark-Desaturated-Blue)
+}
+
+.todo-body.dark-theme .mobile-filter-wrapper{
+  background-color: var(--Very-Dark-Desaturated-Blue)
+}
+
+.todo-body.dark-theme .list-content-wrapper-title {
+  color: var(--Very-Light-Gray)
+}
+
+
+
+
+
+
+.checkbox-deselect {
+  width: 1.2em;
+  height: 1.2em; 
+  border-radius: 50%;
+  background: transparent;
+}
+
+.check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.test {
+  padding: 0.2em 0 0 0;
+}
+
+.form-input {
+  width: 30rem;
+  height: 2em;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  padding: 0 1em;
+  color: white;
+}
+
+.todo-body.light-theme .form-input {
+  color: var(--Very-Dark-Desaturated-Blue);
+}
+       /* LIST-TODO */
+
+.list-content-wrapper {
+  border-bottom: 1px solid var(--Dark-Grayish-Blue);
+  display: flex;
+  justify-content: space-between
+}
+
+.list-content-wrapper p {
+  padding-top: 0.3em;
+}
+
+    /* start-Radio-button */
+
+ .list-content-wrapper-title input[type='checkbox'] {
+  opacity: 0;
+}
+
+.checkbox-wrapper {
+  width: 1.2em;
+  height: 1.2em;
+  border: 1px solid hsl(0, 0%, 98%);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.checked-checkbox {
+  width: 1.2em;
+  height: 1.2em; 
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 98%);
+  background-image: url(./images/icon-check.svg), linear-gradient(hsl(220, 98%, 61%), hsl(280, 87%, 65%));
+  background-position: center;
+  background-repeat: no-repeat;
+ }
+
+        
+
+     /* end-Radio-button */
+.list-content-wrapper-title {
+  display: flex;
+  gap: 1em;
+  color: var(--Very-Dark-Desaturated-Blue)
+}
+
+.completed-todo {
+  text-decoration: line-through;
+  color:hsl(234, 11%, 52%);
+}
+
+.remove-todo {
+  cursor: pointer;
+}
+
+.desktop-all:hover, .desktop-active:hover, .desktop-complete:hover {
+  color: rgb(71, 170, 252);
+}
+
+    /* FilterTodoList */
+.filter-wrapper {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2em;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.filter-center-wrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+}
+
+ /* Mobile FilterTodoList */
+.mobile-filter-wrapper {
+  display: none;
+}
+
+
+
+/**
+ * For MOBILE VIEW
+ */
+ @media screen and (max-width: 600px) {
+  
+   .todo-body {
+     width: 100vw;
+     overflow-x: hidden;
+   }
+
+   .list-content-wrapper, .filter-wrapper, .form-wrapper, .mobile-filter-wrapper {
+     width: 70%;
+     height: 5em;
+   }
+
+   .list-content-wrapper p {
+     font-size: 1.1em;
+   }
+
+   .filter-wrapper {
+    font-size: 1.1em;
+   }
+
+   .filter-center-wrapper {
+     display: none;
+   }
+
+   .mobile-filter-wrapper {
+     display: flex;
+     height: 1em;
+     margin-bottom: 2em;
+     justify-content: center;
+     font-size: 1.1em;
+   }
+
+   .mobile-all:hover, .mobile-active:hover, .mobile-complete:hover {
+     font-weight: 600;
+     color: hsl(234, 11%, 52%);
+   }
+
+   .form-input {
+     width: 20rem ;
+   }
+   
+   .form-input input[type='text'] {
+     outline: none;
+     border: none;
+   }
+
+   .checked-checkbox {
+     width: 1.5em;
+     height: 1.5em;
+   }
+ }
