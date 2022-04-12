@@ -1,9 +1,9 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState, useContext } from 'react'
 import { GlobalContext } from '../context/GlobalState'
 
 
 const AddForm = () => {
-    const { todoList, addTodo } = useContext(GlobalContext)
+    const { addTodo } = useContext(GlobalContext)
     const [todo, setTodo ] = useState('')
 
 
