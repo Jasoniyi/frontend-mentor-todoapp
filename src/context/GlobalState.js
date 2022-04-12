@@ -21,7 +21,7 @@ export const GlobalProvider = ({ children }) => {
 
     useEffect(() => {
         console.log('list', todoList )
-      }, [])
+      }, [todoList])
 
       const addTodo = (todo) => {
         setTodoList([ ...todoList, {  id: todoList.length + 1, content: todo, completed: false}])

@@ -6,9 +6,6 @@ const AddForm = () => {
     const { todoList, addTodo } = useContext(GlobalContext)
     const [todo, setTodo ] = useState('')
 
-    useEffect(() => {
-      console.log('list', todoList)
-    }, [])
 
     const handleSubmit = (e) => {
       e.preventDefault()
